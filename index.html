@@ -4,127 +4,166 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Swastik Boating Club & Tent Camping</title>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
+/* --- GLOBAL STYLES --- */
 * { margin: 0; padding: 0; box-sizing: border-box; }
-body { font-family: 'Poppins', sans-serif; color: #333; line-height: 1.5; }
+body { font-family: 'Poppins', sans-serif; line-height: 1.6; color: #333; scroll-behavior: smooth; }
+a { text-decoration: none; }
+ul { list-style: none; }
 
+/* --- NAVBAR --- */
 nav {
   position: fixed;
-  top: 0;
+  top: 0; left: 0;
   width: 100%;
-  background: rgba(0,0,0,0.5);
-  color: white;
+  background: rgba(0,0,0,0.7);
+  color: #fff;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 40px;
-  z-index: 1000;
+  padding: 15px 50px;
+  z-index: 999;
+  backdrop-filter: blur(6px);
 }
-nav h2 { font-size: 1.5rem; }
-nav ul { display: flex; list-style: none; }
-nav ul li { margin-left: 20px; }
-nav ul li a { color: white; text-decoration: none; font-weight: 500; }
+nav h2 { font-weight: 700; font-size: 1.6rem; letter-spacing: 1px; }
+.nav-links { display: flex; gap: 25px; align-items: center; }
+.nav-links li a { color: #fff; font-weight: 500; transition: 0.3s; padding: 5px 10px; }
+.nav-links li a:hover { color: #00d4ff; }
+.nav-btn { background: linear-gradient(90deg,#00c6ff,#0072ff); padding: 8px 18px; border-radius: 50px; font-weight: 600; }
 
-header {
+/* --- HERO SECTION --- */
+.hero {
   height: 100vh;
-  background: url('../images/boatmain.webp') no-repeat center/cover;
+  background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('../images/boatmain.webp') center/cover no-repeat;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
-  color: white;
   text-align: center;
+  color: #fff;
   padding: 0 20px;
 }
-header h1 { font-size: 3rem; margin-bottom: 10px; }
-header p { margin-bottom: 20px; font-size: 1.2rem; }
-.btn {
-  padding: 12px 25px;
-  background: #00aaff;
+.hero-content h1 { font-size: 3.5rem; font-weight: 700; margin-bottom: 15px; text-shadow: 2px 2px 8px rgba(0,0,0,0.5); }
+.hero-content p { font-size: 1.3rem; margin-bottom: 25px; }
+.booking-btn {
+  background-color: #25D366;
   color: white;
-  border-radius: 25px;
+  padding: 15px 30px;
+  font-size: 1.1rem;
   font-weight: 600;
-  display: inline-block;
-  text-decoration: none;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+.booking-btn:hover {
+  background-color: #128C7E;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+  color: white;
 }
 
-section { padding: 60px 20px; text-align: center; }
-section h2 { font-size: 2rem; margin-bottom: 40px; }
+/* --- SECTIONS --- */
+section { padding: 80px 20px; text-align: center; }
+section h2 { font-size: 2.5rem; margin-bottom: 50px; font-weight: 700; color: #0072ff; }
 
+/* --- CARDS --- */
 .cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
 }
 .card {
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
   background: #fff;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  transition: 0.3s;
 }
-.card img {
-  width: 100%;
-  height: auto;
-  border-radius: 10px;
-  margin-bottom: 15px;
-}
+.card:hover { transform: translateY(-5px); box-shadow: 0 15px 30px rgba(0,0,0,0.2); }
+.card img { width: 100%; display: block; }
+.card h3 { font-size: 1.4rem; margin: 15px 0 10px; color: #0072ff; }
+.card p { font-size: 1rem; color: #555; margin-bottom: 15px; }
 
+/* --- MAP --- */
 .map-box iframe {
   width: 100%;
-  max-width: 600px;
-  height: 300px;
+  max-width: 700px;
+  height: 350px;
   border: 0;
-  border-radius: 10px;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  margin-top: 20px;
 }
 
+/* --- FOOTER --- */
 footer {
-  background: #222;
-  color: white;
-  padding: 20px;
+  background: #0b0b0b;
+  color: #fff;
+  padding: 25px 20px;
   text-align: center;
+  font-weight: 500;
 }
 
-/* Mobile Responsive */
-@media screen and (max-width: 768px) {
-  nav {
-    flex-direction: column;
-    padding: 10px 20px;
-  }
-  nav ul {
-    flex-direction: column;
-    margin-top: 10px;
-  }
-  nav ul li {
-    margin: 10px 0;
-  }
-  header h1 { font-size: 2rem; }
-  header p { font-size: 1rem; }
+/* --- FLOATING WHATSAPP BUTTON --- */
+.whatsapp-float {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #25D366;
+  color: #FFF;
+  border-radius: 50px;
+  text-align: center;
+  font-size: 30px;
+  box-shadow: 2px 2px 3px #999;
+  z-index: 10000;
+  padding: 10px 15px;
+}
+
+/* --- MOBILE RESPONSIVE --- */
+@media (max-width: 768px) {
+  nav { flex-direction: column; padding: 15px 20px; }
+  .nav-links { flex-direction: row; flex-wrap: wrap; justify-content: center; gap: 5px; padding: 5px 0; }
+  .nav-links li a { margin: 0 5px; font-size: 0.9rem; }
+  .nav-btn { display: none; }
+
+  .hero-content h1 { font-size: 2.2rem; padding: 0 10px; }
+  .hero { height: 70vh; }
+
   .cards { grid-template-columns: 1fr; }
-  .btn { width: 80%; text-align: center; }
 }
 </style>
 </head>
 <body>
 
+<!-- NAVBAR -->
 <nav>
-  <h2>Swastik Boating Club & Tent Camping</h2>
-  <ul>
+  <h2>Swastik Boating Club</h2>
+  <ul class="nav-links">
     <li><a href="#">Home</a></li>
     <li><a href="#boats">Boats</a></li>
     <li><a href="#packages">Packages</a></li>
     <li><a href="#contact">Contact</a></li>
+    <li><a href="https://api.whatsapp.com/send?phone=918600031937&text=Hello%20I%20want%20to%20book%20a%20boat" class="nav-btn" target="_blank">Book Now</a></li>
   </ul>
 </nav>
 
-<header>
-  <h1>Swastik Boating Club</h1>
-  <p>Experience Serenity on Water</p>
-  <a href="https://api.whatsapp.com/send?phone=918600031937&text=Hello%20I%20want%20to%20book%20a%20boat"
-     target="_blank"
-     class="btn">Book Now</a>
+<!-- HERO SECTION -->
+<header class="hero">
+  <div class="hero-content">
+    <h1>Swastik Boating Club</h1>
+    <p>Experience Serenity on Water</p>
+    <a href="https://api.whatsapp.com/send?phone=918600031937&text=Hello%20I%20want%20to%20book%20a%20boat" target="_blank" class="booking-btn">
+      📱 Book Now
+    </a>
+  </div>
 </header>
 
+<!-- BOATS -->
 <section id="boats">
   <h2>Our Boats</h2>
   <div class="cards">
@@ -141,6 +180,7 @@ footer {
   </div>
 </section>
 
+<!-- PACKAGES -->
 <section id="packages">
   <h2>Packages</h2>
   <div class="cards">
@@ -155,22 +195,25 @@ footer {
   </div>
 </section>
 
+<!-- CONTACT -->
 <section id="contact">
   <h2>Contact Us</h2>
-  <p>📍 Kubi, near to Malshej Ghat, Junnar, Karanjale, Maharashtra 412409</p>
+  <p>📍 Kubi, near Malshej Ghat, Junnar, Karanjale, Maharashtra 412409</p>
   <p>📞 8600031937</p>
   <div class="map-box">
-    <iframe 
-      src="https://www.google.com/maps?q=Karanjale,Junnar,Maharashtra&output=embed"
-      allowfullscreen 
-      loading="lazy">
-    </iframe>
+    <iframe src="https://www.google.com/maps?q=Karanjale,Junnar,Maharashtra&output=embed" allowfullscreen loading="lazy"></iframe>
   </div>
 </section>
 
+<!-- FOOTER -->
 <footer>
   <p>© 2026 Swastik Boating Club</p>
 </footer>
+
+<!-- FLOATING WHATSAPP BUTTON -->
+<a href="https://api.whatsapp.com/send?phone=918600031937&text=Hello%20I%20want%20to%20book%20a%20boat" target="_blank" class="whatsapp-float">
+  📱
+</a>
 
 </body>
 </html>
