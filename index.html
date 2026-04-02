@@ -7,7 +7,24 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 <style>
 * { margin: 0; padding: 0; box-sizing: border-box; }
-body { font-family: 'Poppins', sans-serif; color: #333; }
+body { font-family: 'Poppins', sans-serif; color: #333; line-height: 1.5; }
+
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(0,0,0,0.5);
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  z-index: 1000;
+}
+nav h2 { font-size: 1.5rem; }
+nav ul { display: flex; list-style: none; }
+nav ul li { margin-left: 20px; }
+nav ul li a { color: white; text-decoration: none; font-weight: 500; }
 
 header {
   height: 100vh;
@@ -18,50 +35,46 @@ header {
   align-items: center;
   color: white;
   text-align: center;
+  padding: 0 20px;
 }
-
-header h1 { font-size: 3rem; }
-header p { margin: 15px 0; }
-header button {
+header h1 { font-size: 3rem; margin-bottom: 10px; }
+header p { margin-bottom: 20px; font-size: 1.2rem; }
+.btn {
   padding: 12px 25px;
-  border: none;
   background: #00aaff;
   color: white;
   border-radius: 25px;
-  cursor: pointer;
+  font-weight: 600;
+  display: inline-block;
+  text-decoration: none;
 }
-
-nav {
-  position: fixed;
-  width: 100%;
-  top: 0;
-  display: flex;
-  justify-content: space-between;
-  padding: 15px 40px;
-  background: rgba(0,0,0,0.5);
-  color: white;
-}
-
-nav ul { display: flex; list-style: none; }
-nav ul li { margin-left: 20px; }
-nav ul li a { color: white; text-decoration: none; }
 
 section { padding: 60px 20px; text-align: center; }
+section h2 { font-size: 2rem; margin-bottom: 40px; }
 
 .cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 20px;
 }
-
 .card {
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  background: #fff;
 }
-
 .card img {
   width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.map-box iframe {
+  width: 100%;
+  max-width: 600px;
+  height: 300px;
+  border: 0;
   border-radius: 10px;
 }
 
@@ -70,6 +83,25 @@ footer {
   color: white;
   padding: 20px;
   text-align: center;
+}
+
+/* Mobile Responsive */
+@media screen and (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    padding: 10px 20px;
+  }
+  nav ul {
+    flex-direction: column;
+    margin-top: 10px;
+  }
+  nav ul li {
+    margin: 10px 0;
+  }
+  header h1 { font-size: 2rem; }
+  header p { font-size: 1rem; }
+  .cards { grid-template-columns: 1fr; }
+  .btn { width: 80%; text-align: center; }
 }
 </style>
 </head>
@@ -86,25 +118,23 @@ footer {
 </nav>
 
 <header>
-  <h1>Swastick Boating Club</h1>
+  <h1>Swastik Boating Club</h1>
   <p>Experience Serenity on Water</p>
-<a href="https://api.whatsapp.com/send?phone=918600031937&text=Hello%20I%20want%20to%20book%20a%20boat"
-   target="_blank"
-   style="padding:12px 25px; background:#00aaff; color:white; border-radius:25px; text-decoration:none; display:inline-block; font-weight:600;">
-  Book Now
-</a>
+  <a href="https://api.whatsapp.com/send?phone=918600031937&text=Hello%20I%20want%20to%20book%20a%20boat"
+     target="_blank"
+     class="btn">Book Now</a>
 </header>
 
 <section id="boats">
   <h2>Our Boats</h2>
   <div class="cards">
     <div class="card">
-      <img src="images/boat2.webp">
+      <img src="images/boat2.webp" alt="Speed Boat">
       <h3>Speed Boat</h3>
       <p>₹0 / 30 mins</p>
     </div>
     <div class="card">
-      <img src='../images/boat3.webp'>
+      <img src="images/boat3.webp" alt="Paddle Boat">
       <h3>Paddle Boat</h3>
       <p>₹0 / 30 mins</p>
     </div>
@@ -127,22 +157,19 @@ footer {
 
 <section id="contact">
   <h2>Contact Us</h2>
-  <p>📍 Kubi, near to malshej Ghat, Junnar, Karanjale, Maharashtra 412409</p>
+  <p>📍 Kubi, near to Malshej Ghat, Junnar, Karanjale, Maharashtra 412409</p>
   <p>📞 8600031937</p>
   <div class="map-box">
     <iframe 
-      src="https://www.google.com/maps?q=Karanjale,Junnar,Maharashtra&output=embed""
-      width="400" 
-      height="300" 
-      style="border:0;" 
-      allowfullscreen="" 
+      src="https://www.google.com/maps?q=Karanjale,Junnar,Maharashtra&output=embed"
+      allowfullscreen 
       loading="lazy">
     </iframe>
   </div>
 </section>
 
 <footer>
-  <p>© 2026 Swastick Boating Club</p>
+  <p>© 2026 Swastik Boating Club</p>
 </footer>
 
 </body>
