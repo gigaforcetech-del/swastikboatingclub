@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Swastick Boating Club</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Poppins', sans-serif; color: #333; }
+
+header {
+  height: 100vh;
+  background: url('../images/boatmain.webp') no-repeat center/cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+}
+
+header h1 { font-size: 3rem; }
+header p { margin: 15px 0; }
+header button {
+  padding: 12px 25px;
+  border: none;
+  background: #00aaff;
+  color: white;
+  border-radius: 25px;
+  cursor: pointer;
+}
+
+nav {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 40px;
+  background: rgba(0,0,0,0.5);
+  color: white;
+}
+
+nav ul { display: flex; list-style: none; }
+nav ul li { margin-left: 20px; }
+nav ul li a { color: white; text-decoration: none; }
+
+section { padding: 60px 20px; text-align: center; }
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.card img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+footer {
+  background: #222;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <h2>Swastick Boating</h2>
+  <ul>
+    <li><a href="#">Home</a></li>
+    <li><a href="#boats">Boats</a></li>
+    <li><a href="#packages">Packages</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<header>
+  <h1>Swastick Boating Club</h1>
+  <p>Experience Serenity on Water</p>
+  <button>Book Now</button>
+</header>
+
+<section id="boats">
+  <h2>Our Boats</h2>
+  <div class="cards">
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1504608524841-42fe6f032b4b">
+      <h3>Speed Boat</h3>
+      <p>₹500 / 30 mins</p>
+    </div>
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1500375592092-40eb2168fd21">
+      <h3>Paddle Boat</h3>
+      <p>₹200 / 30 mins</p>
+    </div>
+  </div>
+</section>
+
+<section id="packages">
+  <h2>Packages</h2>
+  <div class="cards">
+    <div class="card">
+      <h3>Sunset Ride</h3>
+      <p>Enjoy beautiful sunset views</p>
+    </div>
+    <div class="card">
+      <h3>Group Package</h3>
+      <p>Best for families & friends</p>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <h2>Contact Us</h2>
+  <p>📍 Karanjale, Malshej, Junnar, Maharashtra</p>
+  <p>📞 8600031937</p>
+</section>
+
+<footer>
+  <p>© 2026 Swastick Boating Club</p>
+</footer>
+
+</body>
+</html>
